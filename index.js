@@ -1,7 +1,10 @@
 const display = document.querySelector('#display');
-let numOne;
-let numTwo;
-let operator;
+const numberButtons = document.querySelectorAll('.number');
+console.log(display);
+console.log(numberButtons);
+let numOne = '';
+let numTwo = '';
+let operator = '';
 
 function add(x, y) {
   return x + y;
@@ -31,3 +34,10 @@ function operate(operation, x, y) {
       return divide(x, y);
   }
 }
+
+numberButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    numOne += e.target.innerHTML;
+    display.innerHTML = numOne;
+  });
+});
