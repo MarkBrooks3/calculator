@@ -1,3 +1,4 @@
+const display = document.querySelector('#display');
 let numOne;
 let numTwo;
 let operator;
