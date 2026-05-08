@@ -1,7 +1,7 @@
 const display = document.querySelector('#display');
 const numberButtons = document.querySelectorAll('.number');
-console.log(display);
-console.log(numberButtons);
+const operandButtons = document.querySelectorAll('.operand');
+let displayText = '';
 let numOne = '';
 let numTwo = '';
 let operator = '';
@@ -38,6 +38,15 @@ function operate(operation, x, y) {
 numberButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     numOne += e.target.innerHTML;
-    display.innerHTML = numOne;
+    displayText += e.target.innerHTML;
+    display.innerHTML = displayText;
+  });
+});
+
+operandButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    operator = e.target.id;
+    displayText += e.target.innerHTML;
+    display.innerHTML = displayText;
   });
 });
